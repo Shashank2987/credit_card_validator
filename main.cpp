@@ -3,5 +3,6 @@
 using namespace std;
 int main()
 {
-    cout<<"Luhn Algo";
+    cout<<"Luhn Algo"<<endl;
+    cout<<"Credit Card Validator";
 }
