@@ -1,4 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-int main(){};
+int main()
+{
+    cout<<"Luhn Algo";
+}
