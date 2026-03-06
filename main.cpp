@@ -3,6 +3,10 @@
 using namespace std;
 int main()
 {
-    cout<<"Luhn Algo"<<endl;
-    cout<<"Credit Card Validator";
+    string cardnumber;
+    cout<<"-----Credit Card Validator-----"<<endl;
+    cout<<"Enter Your Credit Card Number: ";
+    cin>>cardnumber;
+    cout<<"User Input : "<<cardnumber;
+    return 0;
 }
