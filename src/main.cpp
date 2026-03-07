@@ -17,17 +17,32 @@ bool luhncheck(string cnm){{
     }
     return sum %10 == 0;
 }}
+bool numcheck(string cnm){
+    for(char c: cnm){
+        if(!isdigit(c)){
+            return false;
+            break;
+        }
+
+    }
+    return true;
+}
 int main()
 {
     string cardnumber;
     cout<<"-----Credit Card Validator-----"<<endl;
     cout<<"Enter Your Credit Card Number: ";
     cin>>cardnumber;
-    if(luhncheck(cardnumber)){
-        cout<<"VALID CREDIT CARD"<<endl;
+    if(numcheck(cardnumber)){
+        if(luhncheck(cardnumber)){
+            cout<<"VALID CREDIT CARD"<<endl;
+        }
+        else{
+            cout<<"INVALID CREDIT CARD"<<endl;
+    }
     }
     else{
-        cout<<"INVALID CREDIT CARD"<<endl;
+        cout<<"ERROR: Card Number must contain only Digits"<<endl;
     }
     return 0;
 }
