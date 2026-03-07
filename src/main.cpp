@@ -27,6 +27,21 @@ bool numcheck(string cnm){
     }
     return true;
 }
+void cardtype(string cnm){
+    if(cnm[0] == 4){
+        cout<<"Card Type: Visa"<<endl;
+    }
+    else if(cnm.substr(0,2) == "34" || cnm.substr(0,2) == "37"){
+        cout<<"Card Type: American Express"<<endl;
+    }
+    else if(cnm.substr(0,2) >= "51" && cnm.substr(0,2) <= "55"){
+        cout<<"Card Type: Mastercard"<<endl;
+    }
+    else{
+        cout<<"Card Type: Unkown"<<endl;
+    }
+
+}
 int main()
 {
     string cardnumber;
@@ -35,10 +50,11 @@ int main()
     cin>>cardnumber;
     if(numcheck(cardnumber)){
         if(luhncheck(cardnumber)){
-            cout<<"VALID CREDIT CARD"<<endl;
+            cout<<"Validation Result: VALID"<<endl;
+            cardtype(cardnumber);
         }
         else{
-            cout<<"INVALID CREDIT CARD"<<endl;
+            cout<<"Validation Result: INVALID"<<endl;
     }
     }
     else{
