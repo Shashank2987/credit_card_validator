@@ -28,7 +28,7 @@ bool numcheck(string cnm){
     return true;
 }
 void cardtype(string cnm){
-    if(cnm[0] == 4){
+    if(cnm[0] == '4'){
         cout<<"Card Type: Visa"<<endl;
     }
     else if(cnm.substr(0,2) == "34" || cnm.substr(0,2) == "37"){
@@ -42,12 +42,24 @@ void cardtype(string cnm){
     }
 
 }
+void mask(string cnm){
+    for(int i=0;i<cnm.length()-4;i++){
+        cout<<"*";
+    }
+    for(int i=cnm.length()-4;i<cnm.length();i++){
+        cout<<cnm[i];
+    }
+}
 int main()
 {
     string cardnumber;
     cout<<"-----Credit Card Validator-----"<<endl;
     cout<<"Enter Your Credit Card Number: ";
     cin>>cardnumber;
+    cout<<"\n===================\n";
+    cout<<"Card Number : ";
+    mask(cardnumber);
+    cout<<endl;
     if(numcheck(cardnumber)){
         if(luhncheck(cardnumber)){
             cout<<"Validation Result: VALID"<<endl;
@@ -60,5 +72,6 @@ int main()
     else{
         cout<<"ERROR: Card Number must contain only Digits"<<endl;
     }
+     cout<<"===================\n";
     return 0;
 }
