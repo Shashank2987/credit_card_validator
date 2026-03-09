@@ -56,7 +56,7 @@ int main()
     cout<<"-----Credit Card Validator-----"<<endl;
     cout<<"Enter Your Credit Card Number: ";
     cin>>cardnumber;
-    cout<<"\n===================\n";
+    cout<<"\n=============================\n";
     cout<<"Card Number : ";
     mask(cardnumber);
     cout<<endl;
@@ -67,11 +67,12 @@ int main()
         }
         else{
             cout<<"Validation Result: INVALID"<<endl;
+
     }
     }
     else{
         cout<<"ERROR: Card Number must contain only Digits"<<endl;
     }
-     cout<<"===================\n";
+     cout<<"=============================\n";
     return 0;
 }
