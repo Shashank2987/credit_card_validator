@@ -1,6 +1,31 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
+struct crule{
+    string name;
+    vector <string> prefixes;
+};
+void cardtype(string cnm){
+    vector<crule>rule = 
+    {
+        {"Visa",{"4"}},
+        {"Mastercard",{"51","52","53","54","55"}},
+        {"American Express",{"34","37"}},
+        {"Discover", {"6011","65"}},
+        {"JCB", {"35"}},
+        {"Diners Club", {"300","301","302","303","304","305","36","38"}},
+        {"RuPay", {"60","65","81","82"}}
+    };
+    for(const auto &rl : rule){
+        for(const string &s1 : rl.prefixes){
+            if(cnm.substr(0,s1.length()) == s1){
+                cout<<"Card Type : "<<rl.name<<endl;
+            }
+        }
+    }
+
+}
 bool luhncheck(string cnm){{
     int sum=0;
     bool dbldigit = false;
@@ -26,21 +51,6 @@ bool numcheck(string cnm){
 
     }
     return true;
-}
-void cardtype(string cnm){
-    if(cnm[0] == '4'){
-        cout<<"Card Type: Visa"<<endl;
-    }
-    else if(cnm.substr(0,2) == "34" || cnm.substr(0,2) == "37"){
-        cout<<"Card Type: American Express"<<endl;
-    }
-    else if(cnm.substr(0,2) >= "51" && cnm.substr(0,2) <= "55"){
-        cout<<"Card Type: Mastercard"<<endl;
-    }
-    else{
-        cout<<"Card Type: Unkown"<<endl;
-    }
-
 }
 void mask(string cnm){
     for(int i=0;i<cnm.length()-4;i++){
