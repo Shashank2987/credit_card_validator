@@ -15,7 +15,9 @@ void cardtype(string cnm){
     };
     for(const auto &rl : rule){
         for(const string &s1 : rl.prefixes){
-            
+            if(cnm.substr(0,s1.length()) == s1){
+                cout<<"Card Type : "<<rl.name<<endl;
+            }
         }
     }
 
