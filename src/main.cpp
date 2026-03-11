@@ -15,7 +15,9 @@ void cardtype(string cnm){
         {"Discover", {"6011","65"}},
         {"JCB", {"35"}},
         {"Diners Club", {"300","301","302","303","304","305","36","38"}},
-        {"RuPay", {"60","65","81","82"}}
+        {"RuPay", {"60","65","81","82"}},
+        {"UnionPay", {"62"}},
+        {"Maestro", {"50","56","57","58","63","67"}}
     };
     for(const auto &rl : rule){
         for(const string &s1 : rl.prefixes){
