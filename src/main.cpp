@@ -62,7 +62,6 @@ void cardtype(string cnm){
         }
     }
     cout<<"Card Type: "<<"Unknown"<<endl;
-
 }
 bool luhncheck(string cnm){
     int sum=0;
