@@ -20,7 +20,6 @@ void bininfo(string cnm){
     {"508159","Punjab National Bank"},
     {"652150","Bank of Baroda"},
     {"607153","Kotak Mahindra Bank"},
-
     {"542418","HSBC"},
     {"400551","Bank of America"},
     {"414720","Wells Fargo"},
