@@ -23,6 +23,7 @@ The program accepts a card number from the user, verifies whether it is valid, a
   * MasterCard
   * American Express
 * Masked display of card numbers for safer output
+* Display Issuer Info (Bank Name, Country Of Origin)
 * Simple and readable console interface
 * Implemented entirely in a single C++ source file (`main.cpp`)
 
@@ -36,6 +37,11 @@ The program uses the **Luhn Algorithm**, which follows these steps:
 2. If doubling results in a number greater than 9, subtract 9.
 3. Add all digits together.
 4. If the total sum is divisible by 10, the card number is considered valid.
+5. If Valid,
+    - Card Netwrok is checked using prefix rule
+    - Bank Name is identifies using BIN Lookup using first 6 digits
+    - Issuer Country is displayed
+6. Card Number is displayed in masked format for security
 
 This method helps detect common typing errors and invalid numbers.
 
@@ -44,17 +50,16 @@ This method helps detect common typing errors and invalid numbers.
 ## Example Output
 
 ```
-=================================
-      CREDIT CARD VALIDATOR
-=================================
+-----Credit Card Validator-----
+Enter Your Credit Card Number: 4532015112830366
 
-Enter card number: 4532015112830366
-
----------------------------------
-Card Number       : ************0366
-Validation Result : VALID
-Card Type         : Visa
----------------------------------
+=============================
+Card Number : ************0366
+Validation Result: VALID
+Card Type : Visa
+Bank Name: JPMorgan Chase
+Country  : USA
+=============================
 ```
 
 ---
@@ -76,7 +81,7 @@ Run the program:
 ## Technologies Used
 
 * C++
-* Standard Library (`iostream`, `string`)
+* Standard Library (`iostream`, `string`,'vector')
 
 ---
 
