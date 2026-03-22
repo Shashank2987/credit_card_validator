@@ -26,7 +26,7 @@ function App() {
   const getCardType = (num) => {
     if (num.startsWith("4")) return "Visa";
     if (/^5[1-5]/.test(num)) return "Mastercard";
-    if (/^3[47]/.test(num)) return "American Express";
+    if (/^3[4-7]/.test(num)) return "American Express";
     if (num.startsWith("6")) return "Discover";
     return "Unknown";
   };
