@@ -41,7 +41,7 @@ function App() {
       bank: "Unknown",
       country: "Unknown",
       flag: "🌍",
-      logo: "https://via.placeholder.com/40"
+      domain: "example.com"
     };
   };
 
@@ -68,7 +68,7 @@ function App() {
         bank: info.bank,
         country: info.country,
         flag: info.flag,
-        logo: info.logo
+        domain: info.domain
       });
     } else {
       setResult({ valid: false });
@@ -101,7 +101,14 @@ function App() {
                 <p><strong>Type:</strong> {result.type}</p>
 
                 <div style={styles.bankRow}>
-                  <img src={result.logo} alt="logo" style={styles.logo} />
+                  <img
+                    src={`https://logo.clearbit.com/${result.domain}`}
+                    alt="logo"
+                    style={styles.logo}
+                    onError={(e) => {
+                      e.target.src = "https://via.placeholder.com/40";
+                    }}
+                  />
                   <div>
                     <p><strong>Bank:</strong> {result.bank}</p>
                     <p><strong>Country:</strong> {result.flag} {result.country}</p>
