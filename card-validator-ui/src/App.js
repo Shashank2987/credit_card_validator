@@ -102,11 +102,11 @@ function App() {
 
                 <div style={styles.bankRow}>
                   <img
-                    src={`https://logo.clearbit.com/${result.domain}`}
+                    src={`https://www.google.com/s2/favicons?domain=${result.domain}&sz=64`}
                     alt="logo"
                     style={styles.logo}
                     onError={(e) => {
-                      e.target.src = "https://via.placeholder.com/40";
+                      e.target.style.display = "none";
                     }}
                   />
                   <div>
