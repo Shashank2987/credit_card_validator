@@ -40,7 +40,7 @@ function App() {
     return {
       bank: "Unknown",
       country: "Unknown",
-      flag: "🌍",
+      flag: "un",
       domain: "example.com"
     };
   };
@@ -111,7 +111,14 @@ function App() {
                   />
                   <div>
                     <p><strong>Bank:</strong> {result.bank}</p>
-                    <p><strong>Country:</strong> {result.flag} {result.country}</p>
+                    <p><strong>Country:</strong>{" "}
+                      <img
+                        src={`https://flagcdn.com/24x18/${result.flag}.png`}
+                        alt={result.country}
+                        style={{ verticalAlign: "middle", margin: "0 5px" }}
+                      />
+                      {result.country}
+                    </p>
                   </div>
                 </div>
               </>
