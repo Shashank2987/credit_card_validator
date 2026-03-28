@@ -195,6 +195,9 @@ function App() {
         .spinner { width:13px; height:13px; border:2px solid rgba(201,168,76,0.25); border-top-color:var(--gold); border-radius:50%; animation:spin 0.65s linear infinite; display:inline-block; }
         @keyframes spin { to{transform:rotate(360deg);} }
 
+        .flip-btn { background:transparent; border:1px solid rgba(201,168,76,0.25); border-radius:100px; color:rgba(201,168,76,0.65); font-size:11px; font-family:'DM Sans',sans-serif; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:7px 18px; cursor:pointer; display:flex; align-items:center; gap:7px; transition:all 0.2s; }
+        .flip-btn:hover { background:rgba(201,168,76,0.08); border-color:rgba(201,168,76,0.5); color:#e8c97a; }
+
         .footer-note { text-align:center; font-size:10px; color:var(--text-dim); letter-spacing:0.4px; opacity:0.6; }
       `}</style>
 
@@ -266,6 +269,13 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div style={{display:"flex",justifyContent:"center",marginTop:"-6px"}}>
+            <button className="flip-btn" onClick={() => setFlipped(f => !f)}>
+              <span style={{fontSize:"15px",lineHeight:1}}>↺</span>
+              {flipped ? "Show Front" : "Show Back"}
+            </button>
           </div>
 
           <div className="input-panel">
