@@ -1,6 +1,5 @@
 import { useState } from "react";
 import binDatabase from "./binData";
- 
 const cardTypeIcons = {
   Visa: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg",
   Mastercard: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg",
