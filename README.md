@@ -3,9 +3,7 @@
 
 A simple C++ program that validates credit card numbers using the Luhn Algorithm.
 The program checks whether a card number is valid and identifies the card type based on known prefixes.
-
 ---
-
 ## Overview
 
 This project demonstrates how credit card numbers can be validated using the **Luhn Algorithm**, a widely used checksum formula employed by banks and payment processors to detect invalid card numbers.
